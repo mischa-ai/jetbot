@@ -6,8 +6,10 @@ L4T_VERSION_STRING=$(head -n 1 /etc/nv_tegra_release)
 L4T_RELEASE=$(echo $L4T_VERSION_STRING | cut -f 2 -d ' ' | grep -Po '(?<=R)[^;]+')
 L4T_REVISION=$(echo $L4T_VERSION_STRING | cut -f 2 -d ',' | grep -Po '(?<=REVISION: )[^;]+')
 
-
-export L4T_VERSION="$L4T_RELEASE.$L4T_REVISION"
+# This doesn't work anymore:
+# export L4T_VERSION="$L4T_RELEASE.$L4T_REVISION"
+# Instead set the latest docker images version:
+export L4T_VERSION="32.5.0"
 
 if [[ $L4T_VERSION = "32.4.3" ]]
 then
