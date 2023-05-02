@@ -6,7 +6,7 @@ from setuptools import setup, find_packages, Extension
 def build_libs():
     subprocess.call(['cmake', '.'])
     subprocess.call(['make'])
-    
+
 
 build_libs()
 
@@ -19,7 +19,8 @@ setup(
     install_requires=[
         'Adafruit_MotorHat',
         'Adafruit-SSD1306',
-        'sparkfun-qwiic'
+        'sparkfun-qwiic',
+        'Jetson.GPIO==2.0.21'
     ],
     package_data={'jetbot': ['ssd_tensorrt/*.so']},
 )
